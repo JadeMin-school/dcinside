@@ -1,6 +1,6 @@
 .searchbox {
 	display: flex;
-	flex: 1 0 1;
+	flex: 1 0;
 
 	margin-left: var(--margin-side);
 	margin-right: var(--margin-side);
@@ -38,18 +38,17 @@
 	
 
 	
-	@media (min-width: 700px) {
+	@media (width >= 700px) {
 		margin-left: 20px;
 	}
 	
-	@media (min-width: 900px) {
-		display: flex;
-		flex: 2 0 1;
+	@media (width >= 900px) {
+		flex: 2 0;
 
 		margin-left: 0px;
 
 		input {
-			width: 440px;
+			width: 400px;
 		}
 	}
 }

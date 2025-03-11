@@ -3,13 +3,13 @@
 
 	font-size: 11px;
 
-	margin-right: 40px;
+	margin-right: var(--margin-side);
 
 	.login a {
 		background-color: var(--brand-color);
 		color: white;
 
-		padding: 2 3px;
+		padding: 2px 3px;
 
 		cursor: pointer;
 

@@ -1,4 +1,6 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
+import Header from "./components/header";
 
 import "./layout.css";
 
@@ -13,10 +15,16 @@ export const metadata: Metadata = {
 	description: "Clone Coding - DCInside",
 };
 
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+};
+
 export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="ko">
 			<body>
+				<Header/>
 				{children}
 			</body>
 		</html>

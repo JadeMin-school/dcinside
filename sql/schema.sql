@@ -1,0 +1,22 @@
+CREATE SCHEMA IF NOT EXISTS "dcinside";
+
+USE dcinside;
+
+CREATE TABLE IF NOT EXISTS users (
+	id VARCHAR(30) PRIMARY KEY,
+	password CHAR(64) NOT NULL,
+	nickname VARCHAR(30) NOT NULL,
+	createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS posts (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(50) NOT NULL,
+	content TEXT NOT NULL,
+	uploader VARCHAR(30) NOT NULL,
+	createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (uploader) REFERENCES USERS(id)
+);
+
+NSERT INTO posts (id, title, content, uploader) VALUES (9999, "제목", "내용", "admin");
+DELETE FROM posts WHERE id = 9999;

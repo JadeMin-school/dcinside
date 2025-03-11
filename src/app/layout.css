@@ -7,11 +7,11 @@
 html, body {
 	height: 100%;
 	
-	@media (min-width: 700px) {
+	@media (width >= 700px) {
 
 	}
 
-	@media (min-width: 900px) {
+	@media (width >= 900px) {
 		--margin-side: 90px;
 	}
 }

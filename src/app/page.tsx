@@ -1,11 +1,11 @@
-import Header from "./components/header";
+import Container from "./components/container";
 
 
+
+export const revalidate = 0;
 
 export default function RootPage() {
 	return (
-		<>
-			<Header/>
-		</>
+		<Container/>
 	);
 }

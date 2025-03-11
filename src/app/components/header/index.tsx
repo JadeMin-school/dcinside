@@ -1,5 +1,3 @@
-'use client';
-
 import Links from "./links";
 import SearchBox from "./search";
 
