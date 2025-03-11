@@ -1,0 +1,20 @@
+.links {
+	display: flex;
+
+	font-size: 11px;
+
+	margin-right: 40px;
+
+	.login a {
+		background-color: var(--brand-color);
+		color: white;
+
+		padding: 2 3px;
+
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

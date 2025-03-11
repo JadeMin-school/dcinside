@@ -1,2 +1,0 @@
-# dcinside
-Clone Coding - DCInside

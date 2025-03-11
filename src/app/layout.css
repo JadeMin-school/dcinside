@@ -1,0 +1,62 @@
+:root {
+	--brand-color: rgb(59, 72, 144);
+	--margin-side: 40px;
+	--phone-width: 700px;
+}
+
+html, body {
+	height: 100%;
+	
+	@media (min-width: 700px) {
+
+	}
+
+	@media (min-width: 900px) {
+		--margin-side: 90px;
+	}
+}
+
+body {
+	display: flex;
+	flex-flow: column nowrap;
+
+	margin: 0;
+	padding: 0;
+
+	background: white;
+
+	font-size: 14px;
+
+	a {
+		color: unset;
+
+		text-decoration: unset;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	input {
+		outline: unset;
+	}
+
+	button {
+		border: 1px solid var(--brand-color);
+
+		background-color: var(--brand-color);
+		color: white;
+
+		cursor: pointer;
+	}
+	
+	hr {
+		border: 1px solid #dbdbdb;
+		border-width: 1px 0px 0px 0px;
+		height: 1px;
+		width: 100%;
+
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+}
