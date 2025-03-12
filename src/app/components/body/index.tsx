@@ -4,9 +4,9 @@ import "./index.css";
 
 
 
-export default function Container() {
+export default function Body() {
 	return (
-		<div className="container">
+		<div className="body">
 			<BoardList/>
 		</div>
 	);

@@ -1,7 +1,3 @@
-import 'server-only';
-
-import { getPost } from "@/server/db";
-
 interface PageProps {
 	params: Promise<{
 		id: string
@@ -15,7 +11,10 @@ export const revalidate = 0;
 export default async function Page({params}: PageProps) {
 	const { id } = await params;
 
-	const post = await getPost(id);
+	const request = await fetch(
+		`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/view?id=${id}`
+	);
+	const post: Post = await request.json();
 
 	return (
 		<div>

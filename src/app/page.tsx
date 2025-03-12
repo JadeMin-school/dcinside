@@ -1,4 +1,4 @@
-import Container from "./components/container";
+import Body from "./components/body";
 
 
 
@@ -6,6 +6,6 @@ export const revalidate = 0;
 
 export default function RootPage() {
 	return (
-		<Container/>
+		<Body/>
 	);
 }

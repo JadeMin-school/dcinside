@@ -1,15 +1,14 @@
-import 'server-only';
-
 import Link from 'next/link';
-
-import { getPosts } from "@/server/db.ts";
 
 import "./index.css";
 
 
 
 export default async function BoardList() {
-	const posts = await getPosts(10);
+	const request = await fetch(
+		`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/list?limit=10`
+	);
+	const posts: PostList[] = await request.json();
 
 	return (
 		<table className="board-list">
@@ -26,13 +25,15 @@ export default async function BoardList() {
 					posts.map(post => {
 						const createdAt = new Intl.DateTimeFormat('ko-KR', {
 							dateStyle: 'short',
-						}).format(post.createdAt);
+						}).format(
+							new Date(post.createdAt)
+						);
 
 						return (
 							<tr key={post.id}>
 								<td className="no">{post.id}</td>
 								<td className="title">
-									<Link href={`/post/${post.id}`}>
+									<Link href={`/post/view/${post.id}`}>
 										{post.title}
 									</Link>
 								</td>

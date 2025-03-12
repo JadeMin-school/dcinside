@@ -5,6 +5,7 @@ USE dcinside;
 CREATE TABLE IF NOT EXISTS users (
 	id VARCHAR(30) PRIMARY KEY,
 	password CHAR(64) NOT NULL,
+	email VARCHAR(50) NOT NULL,
 	nickname VARCHAR(30) NOT NULL,
 	createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -18,5 +19,5 @@ CREATE TABLE IF NOT EXISTS posts (
 	FOREIGN KEY (uploader) REFERENCES USERS(id)
 );
 
-NSERT INTO posts (id, title, content, uploader) VALUES (9999, "제목", "내용", "admin");
+INSERT INTO posts (id, title, content, uploader) VALUES (9999, "제목", "내용", "admin");
 DELETE FROM posts WHERE id = 9999;

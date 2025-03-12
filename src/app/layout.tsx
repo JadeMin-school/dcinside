@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 
+import Providers from "./providers.tsx";
+
 import Header from "./components/header";
 
 import "./layout.css";
@@ -20,12 +22,14 @@ export const viewport: Viewport = {
 	initialScale: 1,
 };
 
-export default function RootLayout({ children }: Props) {
+export default function RootLayout(props: Props) {
 	return (
 		<html lang="ko">
 			<body>
-				<Header/>
-				{children}
+				<Providers>
+					<Header/>
+					{props.children}
+				</Providers>
 			</body>
 		</html>
 	);
