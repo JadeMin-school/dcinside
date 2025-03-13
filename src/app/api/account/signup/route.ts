@@ -15,13 +15,6 @@ interface RequestBody {
 export async function POST(request: NextRequest) {
 	const body: RequestBody = await request.json();
 
-	if (!body.id || !body.password) {
-		return new Response(
-			"Missing id or password",
-			{ status: 400 }
-		);
-	}
-
 	const conn = await getPool();
 	const result = await conn.execute(
 		"INSERT INTO users (id, nickname, password) VALUES (?, ?, ?)",

@@ -10,7 +10,13 @@ export async function GET(request: NextRequest) {
 
 	const conn = await getPool();
 	const [rows] = await conn.query(
-		"SELECT id, title, uploader, createdAt FROM posts ORDER BY id DESC LIMIT ?",
+		`
+		SELECT posts.id, posts.title, posts.uploader AS "uploaderId", users.nickname AS "uploaderNick", posts.createdAt
+			FROM posts
+				INNER JOIN users
+				ON posts.uploader = users.id
+			ORDER BY id DESC LIMIT ?
+		`,
 		[Number(limit)]
 	) as [Post[], FieldPacket[]];
 

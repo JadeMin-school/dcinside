@@ -1,7 +1,8 @@
 interface PostList {
 	id: string;
 	title: string;
-	uploader: string;
+	uploaderId: string;
+	uploaderNick: string;
 	createdAt: Date;
 }
 

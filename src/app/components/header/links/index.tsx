@@ -16,12 +16,12 @@ export default function Links() {
 				{status === "authenticated" ? (
 					<>
 						<span>{data.user.nickname}님 </span>
-						<Link href="/logout">
+						<Link href="/account/logout">
 							로그아웃
 						</Link>
 					</>
 				) : (
-					<Link href="/login">
+					<Link href="/account/login">
 						로그인
 					</Link>
 				)}

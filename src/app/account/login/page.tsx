@@ -1,5 +1,7 @@
 'use client';
 
+import type { FormEventHandler } from 'react';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
@@ -13,8 +15,8 @@ export default function Login() {
 	const [id, setId] = useState('');
 	const [password, setPassword] = useState('');
 
-	async function onSubmit(e: React.FormEvent) {
-		e.preventDefault();
+	const onSubmit: FormEventHandler = async (event) => {
+		event.preventDefault();
 		
 		const response = await signIn("credentials", {
 			id,

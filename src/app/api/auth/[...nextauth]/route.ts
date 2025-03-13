@@ -7,7 +7,7 @@ const handler = NextAuth({
 		maxAge: 60 * 60 * 24,
 	},
 	pages: {
-		signIn: "/login",
+		signIn: "/account/login",
 	},
 	providers: [
 		CredentialsProvider({

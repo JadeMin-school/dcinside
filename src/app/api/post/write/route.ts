@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
 	if (rows.length === 0) {
 		return new Response(
 			JSON.stringify("해당 계정은 존재하지 않습니다."),
-			{ status: 401 }
+			{ status: 404 }
 		);
 	}
 

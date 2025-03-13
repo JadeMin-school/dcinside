@@ -37,7 +37,7 @@ export default async function BoardList() {
 										{post.title}
 									</Link>
 								</td>
-								<td className="uploader">{post.uploader}</td>
+								<td className="uploader">{post.uploaderNick}</td>
 								<td className="created-at">{createdAt}</td>
 							</tr>
 						);
